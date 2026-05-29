@@ -46,7 +46,9 @@ namespace GameFrameX.ImageCache.Runtime
                 return;
             }
 
-            _imageCacheManager.Config.CachePath = m_Config.CachePath;
+            _imageCacheManager.Config.CachePath = string.IsNullOrEmpty(m_Config.CachePath)
+                ? PathHelper.AppHotfixResPath + "/cache/images/"
+                : m_Config.CachePath;
             _imageCacheManager.Config.MaxDiskSize = m_Config.MaxDiskSize;
             _imageCacheManager.Config.ExpireDays = m_Config.ExpireDays;
 

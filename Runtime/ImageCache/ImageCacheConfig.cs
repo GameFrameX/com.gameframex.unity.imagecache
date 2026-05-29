@@ -1,5 +1,4 @@
 using System;
-using GameFrameX.Runtime;
 using UnityEngine;
 
 namespace GameFrameX.ImageCache.Runtime
@@ -30,7 +29,7 @@ namespace GameFrameX.ImageCache.Runtime
 
         public ImageCacheConfig()
         {
-            m_CachePath = PathHelper.AppHotfixResPath + "/cache/images/";
+            m_CachePath = string.Empty;
             m_MaxDiskSize = 0;
             m_ExpireDays = 0;
         }
