@@ -30,6 +30,9 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1"
   },
+  "documentationUrl": "https://gameframex.doc.alianblank.com",
+  "changelogUrl": "https://github.com/gameframex/com.gameframex.unity.imagecache/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/gameframex/com.gameframex.unity.imagecache/blob/main/LICENSE.md",
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.cnb.cool/GameFrameX/npm/-/packages/"
