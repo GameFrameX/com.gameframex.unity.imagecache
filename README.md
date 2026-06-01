@@ -113,4 +113,4 @@ See [Releases](https://github.com/GameFrameX/com.gameframex.unity.imagecache/rel
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/GameFrameX/com.gameframex.unity.imagecache/blob/main/LICENSE) file for details.
+See [LICENSE.md](LICENSE.md) for license information.

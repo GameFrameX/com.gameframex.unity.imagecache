@@ -113,4 +113,4 @@ imageCache.ClearCache();
 
 ## ライセンス
 
-本プロジェクトは Apache License 2.0 のもとで公開されています - 詳細は [LICENSE](https://github.com/GameFrameX/com.gameframex.unity.imagecache/blob/main/LICENSE) ファイルをご参照ください。
+詳しくは [LICENSE.md](LICENSE.md) をご参照ください。

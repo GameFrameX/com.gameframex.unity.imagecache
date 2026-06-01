@@ -113,4 +113,4 @@ imageCache.ClearCache();
 
 ## 開源協議
 
-本專案基於 Apache License 2.0 協議開源 - 詳見 [LICENSE](https://github.com/GameFrameX/com.gameframex.unity.imagecache/blob/main/LICENSE) 檔案。
+詳見 [LICENSE.md](LICENSE.md) 檔案。
