@@ -2,7 +2,7 @@
     "name": "com.gameframex.unity.imagecache",
     "displayName": "Game Frame X Image Cache",
     "category": "GameFrameX",
-    "description": "GameFrameX Image Cache — Unity remote image download and disk cache package. Downloads images from HTTP/HTTPS URLs, caches them on disk with MD5-based filenames, and loads them as Texture2D. Provides configurable cache path, with extensible support for max disk size and expiry. All-in-One Solution for Indie Game Development · Empowering Indie Developers' Dreams. Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX Image Cache — Unity 远程图片下载与磁盘缓存功能包。从 HTTP/HTTPS URL 下载图片，使用基于 MD5 的文件名缓存到磁盘，并加载为 Texture2D。提供可配置的缓存路径，支持扩展最大磁盘容量和过期时间。独立游戏前后端一体化解决方案 · 独立游戏开发者的圆梦大使。文档：https://gameframex.doc.alianblank.com",
+    "description": "GameFrameX Image Cache — Unity remote image download and disk cache package. Downloads images from HTTP/HTTPS URLs, caches them on disk with MD5-based filenames under a configurable path with max disk size and expiry-day limits, and loads them asynchronously as Texture2D (Task with CancellationToken); on WebGL it loads through UnityWebRequestTexture leaving caching to the browser. Offers IsCached / RemoveCache / ClearCache management, with startup configuration through ImageCacheOptions (GameFrameXOptions.Configure). Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX Image Cache — Unity 远程图片下载与磁盘缓存功能包。从 HTTP/HTTPS URL 下载图片，以 MD5 文件名缓存到磁盘，支持可配置缓存路径、最大磁盘容量与过期天数，异步加载为 Texture2D（Task + CancellationToken）；WebGL 下经 UnityWebRequestTexture 加载、缓存交由浏览器管理。提供 IsCached / RemoveCache / ClearCache 管理接口，启动配置经 ImageCacheOptions（GameFrameXOptions.Configure）注入。文档：https://gameframex.doc.alianblank.com",
     "version": "2.0.0",
     "unity": "2019.4",
     "keywords": [
