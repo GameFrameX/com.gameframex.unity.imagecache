@@ -2,7 +2,8 @@
     "name": "GameFrameX.ImageCache.Editor",
     "references": [
         "GameFrameX.ImageCache.Runtime",
-        "GameFrameX.Editor"
+        "GameFrameX.Editor",
+        "GameFrameX.Runtime"
     ],
     "includePlatforms": [
         "Editor"

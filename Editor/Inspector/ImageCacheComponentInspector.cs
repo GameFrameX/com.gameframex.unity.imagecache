@@ -11,31 +11,13 @@ namespace GameFrameX.ImageCache.Editor
     [CustomEditor(typeof(ImageCacheComponent))]
     internal sealed class ImageCacheComponentInspector : ComponentTypeComponentInspector
     {
-        private SerializedProperty _cachePath;
-        private SerializedProperty _maxDiskSize;
-        private SerializedProperty _expireDays;
-
-        protected override void Enable()
-        {
-            var config = serializedObject.FindProperty("m_Config");
-            _cachePath = config.FindPropertyRelative("m_CachePath");
-            _maxDiskSize = config.FindPropertyRelative("m_MaxDiskSize");
-            _expireDays = config.FindPropertyRelative("m_ExpireDays");
-        }
 
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            serializedObject.Update();
-
-            EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Image Cache Config", EditorStyles.boldLabel);
-            EditorGUILayout.PropertyField(_cachePath, new GUIContent("Cache Path"));
-            EditorGUILayout.PropertyField(_maxDiskSize, new GUIContent("Max Disk Size (Bytes)"));
-            EditorGUILayout.PropertyField(_expireDays, new GUIContent("Expire Days"));
-
-            serializedObject.ApplyModifiedProperties();
+            // C9 活视图：编辑态提示 ImageCacheOptions 入口；Play 态展开 Config（CachePath/MaxDiskSize/ExpireDays）实时编辑，经 ImageCacheConfig 公开属性写回。
+            GameFrameXOptionsLiveViewUtility.DrawLiveView((ImageCacheComponent)target, typeof(ImageCacheOptions));
         }
 
         protected override void RefreshTypeNames()

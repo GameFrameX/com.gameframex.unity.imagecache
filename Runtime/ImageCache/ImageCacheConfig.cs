@@ -27,6 +27,7 @@ namespace GameFrameX.ImageCache.Runtime
         [SerializeField]
         private int m_ExpireDays;
 
+        [UnityEngine.Scripting.Preserve]
         public ImageCacheConfig()
         {
             m_CachePath = string.Empty;
@@ -37,6 +38,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <summary>
         /// 获取或设置缓存文件存放路径。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public string CachePath
         {
             get { return m_CachePath; }
@@ -46,6 +48,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <summary>
         /// 获取或设置磁盘缓存最大容量（字节）。0 表示不限制。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public long MaxDiskSize
         {
             get { return m_MaxDiskSize; }
@@ -55,6 +58,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <summary>
         /// 获取或设置缓存过期天数。0 表示永不过期。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public int ExpireDays
         {
             get { return m_ExpireDays; }

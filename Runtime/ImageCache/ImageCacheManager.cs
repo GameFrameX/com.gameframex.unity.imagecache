@@ -19,7 +19,7 @@ namespace GameFrameX.ImageCache.Runtime
     /// WebGL 平台：通过 UnityWebRequestTexture 加载，由浏览器管理缓存。
     /// </summary>
     [UnityEngine.Scripting.Preserve]
-    public sealed class ImageCacheManager : GameFrameworkModule, IImageCacheManager
+    public sealed class ImageCacheManager : IGameFrameworkModule, IImageCacheManager, IShutdownableModule
     {
         private readonly ImageCacheConfig _config;
 
@@ -35,6 +35,7 @@ namespace GameFrameX.ImageCache.Runtime
         private readonly ConcurrentDictionary<int, TaskCompletionSource<bool>> _downloadingTasks = new ConcurrentDictionary<int, TaskCompletionSource<bool>>();
 #endif
 
+        [UnityEngine.Scripting.Preserve]
         public ImageCacheManager()
         {
             _config = new ImageCacheConfig();
@@ -43,6 +44,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <summary>
         /// 获取图片缓存配置。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public ImageCacheConfig Config
         {
             get { return _config; }
@@ -67,6 +69,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <param name="url">远程图片地址（必须以 http:// 或 https:// 开头）。</param>
         /// <param name="cancellationToken">取消令牌（仅非 WebGL 平台生效）。</param>
         /// <returns>加载成功返回 Texture2D，失败返回 null。</returns>
+        [UnityEngine.Scripting.Preserve]
         public async Task<Texture2D> LoadImageAsync(string url, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(url))
@@ -177,6 +180,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// </summary>
         /// <param name="url">远程图片地址。</param>
         /// <returns>已缓存返回 true，否则返回 false。</returns>
+        [UnityEngine.Scripting.Preserve]
         public bool IsCached(string url)
         {
             if (string.IsNullOrEmpty(url))
@@ -198,6 +202,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// WebGL 平台不支持此操作。
         /// </summary>
         /// <param name="url">远程图片地址。</param>
+        [UnityEngine.Scripting.Preserve]
         public void RemoveCache(string url)
         {
             if (string.IsNullOrEmpty(url))
@@ -221,6 +226,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// 清空所有本地缓存文件。
         /// WebGL 平台不支持此操作。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public void ClearCache()
         {
 #if UNITY_WEBGL
@@ -259,14 +265,11 @@ namespace GameFrameX.ImageCache.Runtime
         }
 #endif
 
-        protected override void Update(float elapseSeconds, float realElapseSeconds)
-        {
-        }
-
         /// <summary>
         /// 关闭并清理资源。
         /// </summary>
-        protected override void Shutdown()
+        [UnityEngine.Scripting.Preserve]
+        public void Shutdown()
         {
 #if !UNITY_WEBGL
             if (_downloadManager != null)

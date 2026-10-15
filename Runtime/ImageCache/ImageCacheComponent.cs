@@ -16,19 +16,20 @@ namespace GameFrameX.ImageCache.Runtime
     [DisallowMultipleComponent]
     [AddComponentMenu("GameFrameX/Image Cache")]
     [UnityEngine.Scripting.Preserve]
+    [GameFrameXAutoComponent(600)]
     public sealed class ImageCacheComponent : GameFrameworkComponent
     {
         private IImageCacheManager _imageCacheManager;
 
         /// <summary>
-        /// 图片缓存配置，可在 Inspector 中设置。
+        /// 图片缓存配置（来自 ImageCacheOptions，未配置时与原序列化默认值同源）。
         /// </summary>
-        [SerializeField]
         private ImageCacheConfig m_Config = new ImageCacheConfig();
 
         /// <summary>
         /// 获取图片缓存配置。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public ImageCacheConfig Config
         {
             get { return m_Config; }
@@ -39,6 +40,11 @@ namespace GameFrameX.ImageCache.Runtime
             ImplementationComponentType = Utility.Assembly.GetType(componentType);
             InterfaceComponentType = typeof(IImageCacheManager);
             base.Awake();
+            if (GameFrameXOptions.TryGet<ImageCacheOptions>(out var imageCacheOptions))
+            {
+                m_Config = imageCacheOptions.Config;
+            }
+
             _imageCacheManager = GameFrameworkEntry.GetModule<IImageCacheManager>();
             if (_imageCacheManager == null)
             {
@@ -70,6 +76,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <param name="url">远程图片地址（必须以 http:// 或 https:// 开头）。</param>
         /// <param name="cancellationToken">取消令牌。</param>
         /// <returns>加载成功返回 Texture2D，失败返回 null。</returns>
+        [UnityEngine.Scripting.Preserve]
         public Task<Texture2D> LoadImageAsync(string url, CancellationToken cancellationToken = default)
         {
             return _imageCacheManager.LoadImageAsync(url, cancellationToken);
@@ -80,6 +87,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// </summary>
         /// <param name="url">远程图片地址。</param>
         /// <returns>已缓存返回 true，否则返回 false。</returns>
+        [UnityEngine.Scripting.Preserve]
         public bool IsCached(string url)
         {
             return _imageCacheManager.IsCached(url);
@@ -89,6 +97,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// 移除指定 URL 的本地缓存文件。
         /// </summary>
         /// <param name="url">远程图片地址。</param>
+        [UnityEngine.Scripting.Preserve]
         public void RemoveCache(string url)
         {
             _imageCacheManager.RemoveCache(url);
@@ -97,6 +106,7 @@ namespace GameFrameX.ImageCache.Runtime
         /// <summary>
         /// 清空所有本地缓存文件。
         /// </summary>
+        [UnityEngine.Scripting.Preserve]
         public void ClearCache()
         {
             _imageCacheManager.ClearCache();

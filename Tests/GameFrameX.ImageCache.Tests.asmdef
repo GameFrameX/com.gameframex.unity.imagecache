@@ -1,0 +1,19 @@
+{
+    "name": "GameFrameX.ImageCache.Tests",
+    "references": [
+        "GameFrameX.ImageCache.Runtime",
+        "GameFrameX.Runtime"
+    ],
+    "rootNamespace": "GameFrameX.ImageCache.Tests",
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
