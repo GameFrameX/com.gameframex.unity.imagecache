@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/gameframex/com.gameframex.unity.imagecache/compare/1.0.0...2.0.0) (2026-10-15)
+
+
+* feat(module)!: 图片缓存薄入口化并新增 ImageCacheOptions ([8a30e3e](https://github.com/gameframex/com.gameframex.unity.imagecache/commit/8a30e3e572e6a99cef2cf27a0efa3945d83c03f8))
+
+
+### BREAKING CHANGES
+
+* 组件序列化配置字段移除，编辑期配置入口收敛到代码 ImageCacheOptions。
+
 ## [Unreleased]
 
 ### ⚠ BREAKING CHANGES
