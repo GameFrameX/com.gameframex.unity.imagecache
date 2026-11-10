@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/gameframex/com.gameframex.unity.imagecache/compare/2.0.0...2.0.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **imagecache:** 添加完整 link.xml 防代码裁剪保护 ([8ce7ddf](https://github.com/gameframex/com.gameframex.unity.imagecache/commit/8ce7ddf83b8d9029e047ca0a335d8a10f4062916))
+
 # [2.0.0](https://github.com/gameframex/com.gameframex.unity.imagecache/compare/1.0.0...2.0.0) (2026-10-15)
 
 

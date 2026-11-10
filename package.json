@@ -3,7 +3,7 @@
     "displayName": "Game Frame X Image Cache",
     "category": "GameFrameX",
     "description": "GameFrameX Image Cache — Unity remote image download and disk cache package. Downloads images from HTTP/HTTPS URLs, caches them on disk with MD5-based filenames under a configurable path with max disk size and expiry-day limits, and loads them asynchronously as Texture2D (Task with CancellationToken); on WebGL it loads through UnityWebRequestTexture leaving caching to the browser. Offers IsCached / RemoveCache / ClearCache management, with startup configuration through ImageCacheOptions (GameFrameXOptions.Configure). Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX Image Cache — Unity 远程图片下载与磁盘缓存功能包。从 HTTP/HTTPS URL 下载图片，以 MD5 文件名缓存到磁盘，支持可配置缓存路径、最大磁盘容量与过期天数，异步加载为 Texture2D（Task + CancellationToken）；WebGL 下经 UnityWebRequestTexture 加载、缓存交由浏览器管理。提供 IsCached / RemoveCache / ClearCache 管理接口，启动配置经 ImageCacheOptions（GameFrameXOptions.Configure）注入。文档：https://gameframex.doc.alianblank.com",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "unity": "2019.4",
     "keywords": [
         "GameFrameX",
